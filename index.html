@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adonis Pharmacy Delivery</title>
+<style>
+body{font-family:Arial, sans-serif;margin:0;background:#f5f7fb}
+header{background:#2a7be4;color:white;padding:20px;text-align:center}
+.container{padding:20px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.card{background:white;border-radius:10px;padding:15px;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
+button{background:#2a7be4;color:white;border:none;padding:10px 15px;border-radius:6px;cursor:pointer}
+button:hover{background:#1f5fb8}
+footer{text-align:center;padding:15px;background:#eee;margin-top:30px}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Adonis Pharmacy</h1>
+<p>Order your medications online – Fast delivery in Kigali</p>
+</header>
+
+<div class="container">
+<h2>Available Medications</h2>
+
+<div class="products">
+
+<div class="card">
+<h3>Paracetamol</h3>
+<p>Price: 1,000 RWF</p>
+<button onclick="order('Paracetamol')">Order</button>
+</div>
+
+<div class="card">
+<h3>Amoxicillin</h3>
+<p>Price: 3,000 RWF</p>
+<button onclick="order('Amoxicillin')">Order</button>
+</div>
+
+<div class="card">
+<h3>Ibuprofen</h3>
+<p>Price: 2,500 RWF</p>
+<button onclick="order('Ibuprofen')">Order</button>
+</div>
+
+</div>
+</div>
+
+<footer>
+<p>Delivery Phone / WhatsApp: +250XXXXXXXXX</p>
+</footer>
+
+<script>
+function order(product){
+let phone="250XXXXXXXXX";
+let message=`Hello, I want to order ${product} from Adonis Pharmacy.`;
+let url=`https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+window.open(url,'_blank');
+}
+</script>
+
+</body>
+</html>
